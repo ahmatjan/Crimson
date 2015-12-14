@@ -1,0 +1,11 @@
+#pathway {
+	clear: both;
+	width: 101%;
+}
+.pagination {
+	padding-bottom: 2px;
+	zoom: 1;
+}
+ul.topiclist dd,dd.topics,.forabg,.forumbg,ul.topiclist li.row dl {
+	zoom: 1;
+}

@@ -1,0 +1,46 @@
+/*  phpBB 3.0 Style Sheet
+    --------------------------------------------------------------
+	Style name: dominion (dark variations) 
+	Original Author: RocketTheme, LLC (C) Copyright. All rights reserved.     		
+    --------------------------------------------------------------
+*/
+
+li.header dt, li.header dd,#page-body li.header dt a,#page-body li.header dt a:visited {
+color: #666666;
+}
+
+li.row {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+li.row:hover {
+    background-color: #f9f9f9;
+}
+
+.bg1 {background-color: #dedede;}
+.bg2 {background-color: #ebebeb;}
+
+.cp-mini { 
+background-color: #dedede;
+}
+
+#simple-wrap .panel,.cp-mini {
+    background-color: #dedede;
+}
+#simple-wrap  tr.bg1 {
+     background-color: #dedede;
+}
+
+#simple-wrap  tr.bg2 {
+     background-color: #dedede;
+}
+table.table1 tbody tr.bg2,table1 tbody tr.bg2:hover {
+     background-color: #dedede;
+}
+table.table1 tbody tr.bg1,table1 tbody tr.bg1:hover {
+     background-color: #dedede;
+}
+
+.panel {
+background-color:#ececec;
+}

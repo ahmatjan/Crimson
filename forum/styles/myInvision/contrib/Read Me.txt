@@ -1,0 +1,13 @@
+myInvision
+~~~~~~~~~~~
+Style Version: 3.0
+for phpBB: 3.0.11
+
+~~~~~~~~~~~
+
+Style has options, found in template folder, named options.html
+
+myInvision: Nice blue style by Brad Veryard.
+
+http://www.bradleyv.com
+http://www.ourdesigns.net

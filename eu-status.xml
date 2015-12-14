@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<status>
+<shard name="Blightweald" online="True" locked="False" population="medium" queued="0" language="English" pvp="False" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Bloodiron" online="True" locked="False" population="low" queued="0" language="English" pvp="True" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Argent" online="True" locked="False" population="low" queued="0" language="English" pvp="False" rp="True" recommend="False" initialCreationRestriction="False"/>
+<shard name="Gelidra" online="True" locked="False" population="medium" queued="0" language="English" pvp="False" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Zaviel" online="True" locked="False" population="medium" queued="0" language="English" pvp="False" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Volan" online="True" locked="False" population="low" queued="0" language="English" pvp="True" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Brutwacht" online="True" locked="False" population="medium" queued="0" language="German" pvp="False" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Trübkopf" online="True" locked="False" population="low" queued="0" language="German" pvp="True" rp="False" recommend="True" initialCreationRestriction="False"/>
+<shard name="Brutmutter" online="True" locked="False" population="medium" queued="0" language="German" pvp="False" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Brisesol" online="True" locked="False" population="medium" queued="0" language="French" pvp="False" rp="False" recommend="False" initialCreationRestriction="False"/>
+<shard name="Phynnious" online="True" locked="False" population="low" queued="0" language="French" pvp="True" rp="False" recommend="True" initialCreationRestriction="False"/>
+<shard name="Nomi" online="True" locked="False" population="low" queued="0" language="French" pvp="False" rp="False" recommend="True" initialCreationRestriction="False"/>
+</status>

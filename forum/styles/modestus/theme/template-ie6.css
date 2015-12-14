@@ -1,0 +1,33 @@
+#pathway {
+	clear: both;
+	width: 101%;
+}
+.pagination {
+	padding-bottom: 2px;
+	zoom: 1;
+}
+ul.topiclist dd,dd.topics,.forabg,.forumbg,ul.topiclist li.row dl,.posts_container {
+	zoom: 1;
+}
+.top_icons li {
+	display: inline !important;
+	zoom: 1;
+}
+.top_icons li a {
+	display: inline !important;
+	position: relative;
+	zoom: 1;
+}
+.top_icons ul {
+	display: inline !important;
+	zoom: 1;
+}
+#search-box {
+	margin-top: 5px;
+}
+.headerbar {
+	padding-bottom: 30px;
+}
+ul.topiclist dt {
+	width: 67%;
+}

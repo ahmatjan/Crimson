@@ -1,0 +1,86 @@
+	</div>
+
+<div id="page-footer">
+
+	<div class="navbar">
+		<div class="inner">
+		&nbsp;
+		</div>
+	</div>
+        
+    <!-- IF $ENABLE_MODESTUS_BOTTOM_MODULES  -->   
+<div class="modules">
+    <div class="inner">
+	    <!-- IF S_DISPLAY_ONLINE_LIST -->
+    <div class="<!-- IF BIRTHDAY_LIST -->w33<!-- ELSE -->w49<!-- ENDIF -->">
+	<!-- IF U_VIEWONLINE --><h3><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3>{L_WHO_IS_ONLINE}</h3><!-- ENDIF -->
+	<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
+	<!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
+    </div>
+    <!-- ENDIF -->
+    
+    <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+    <div class="w33">
+	<h3>{L_BIRTHDAYS}</h3>
+	<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+    </div>
+    <!-- ENDIF -->
+    
+   
+<!-- IF NEWEST_USER -->
+ <div class="<!-- IF BIRTHDAY_LIST -->w33<!-- ELSE -->w49<!-- ENDIF -->">
+	<h3>{L_STATISTICS}</h3>
+	<p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+    </div>
+<!-- ENDIF -->
+</div>
+</div>
+<!-- ENDIF -->
+    <div class="solo_inner">
+    <ul class="linklist">
+			<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+				<!-- IF not S_IS_BOT -->
+					<!-- IF S_WATCH_FORUM_LINK --><li <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+					<!-- IF U_WATCH_TOPIC --><li <!-- IF S_WATCHING_TOPIC -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_BOOKMARK_TOPIC --><li class="icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+					<!-- IF U_BUMP_TOPIC --><li class="icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+				<!-- ENDIF -->
+			<li class="rightside"><!-- IF U_TEAM --><a href="{U_TEAM}">{L_THE_TEAM}</a> &bull; <a href="javascript:chooseStyle('none', 60)">{L_RESET} {L_SETTINGS}</a> &bull; <!-- ENDIF --> <!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> &bull; <!-- ENDIF -->{S_TIMEZONE}</li>
+		</ul>
+    </div>
+        
+
+
+
+	<div class="copyright">
+		
+		Designed by <a href="http://www.rockettheme.com/">RocketTheme</a><br /><br />
+		
+		
+		
+		<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB3. If you (honestly) cannot retain
+	the full copyright we ask you at least leave in place the "Powered by phpBB" line, with
+	"phpBB" linked to www.phpbb.com. If you refuse to include even this then support on our
+	forums may be affected.
+
+	The phpBB Group : 2006
+//-->
+		Powered by <a href="http://www.phpbb.com/">phpBB</a> &copy; 2000, 2002, 2005, 2007 phpBB Group
+		<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+		<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+		<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" name="bottom" accesskey="z"></a>
+	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+</div>
+
+</body>
+</html>

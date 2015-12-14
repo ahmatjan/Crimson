@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="../styles/grunge/template/moorainbow/mooRainbow.css" type="text/css" />
+<script type="text/javascript" src="../styles/grunge/template/rt_js/mootools-release-1.11.js"></script>
+<script type="text/javascript" src="../styles/grunge/template/moorainbow/mooRainbow.js"></script>
+<script type="text/javascript">
+		window.addEvent('domready', function(){ var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false}); });
+		window.addEvent('domready', function() {
+});var rainbowLoad = function(name, hex) {
+				if (hex) {
+					var n = name.replace('params', '');
+					$(n+'_input').getPrevious().value = hex;
+					$(n+'_input').getFirst().setStyle('background-color', hex);
+				}
+			};
+					
+<!-- PHP -->
+global $phpbb_root_path;
+include($phpbb_root_path."styles/grunge/template/moorainbow/colorchooser.php");
+echo RokColorChooser::newRainbow('grunge_link_color');
+<!-- ENDPHP -->	
+
+  </script>
+ 
+ 			
+   <table class="toolbar" style="display: none;"><tr>
+<td class="button" id="toolbar-preview">
+</td>
+</tr></table>
+   
+   <form id="acp_joomla" method="post" action="{U_ACTION}">
+<!-- BEGIN options -->
+
+	<!-- IF options.S_LEGEND -->
+		<!-- IF not options.S_FIRST_ROW -->
+			</fieldset>
+		<!-- ENDIF -->
+		<fieldset>
+			<legend>{options.LEGEND}</legend>
+	<!-- ELSE -->
+
+		<dl>
+			<dt><label for="{options.KEY}">{options.TITLE}:</label><!-- IF options.S_EXPLAIN --><br /><span>{options.TITLE_EXPLAIN}</span><!-- ENDIF --></dt>
+			<dd>{options.CONTENT}
+			<!-- IF MODE == grunge -->
+			<!-- IF options.KEY == grunge_link_color --><div class="picker" id="myRainbow_{options.KEY}_input"><div class="overlay"></div></div><!-- ENDIF -->
+			<!-- ENDIF -->
+		</dd></dl>
+		
+	<!-- ENDIF -->
+<!-- END options -->

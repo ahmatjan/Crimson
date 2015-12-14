@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="../styles/quasar/template/moorainbow/mooRainbow.css" type="text/css" />
+<script type="text/javascript" src="../styles/quasar/template/rt_js/mootools-release-1.11.js"></script>
+<script type="text/javascript" src="../styles/quasar/template/moorainbow/mooRainbow.js"></script>
+<script type="text/javascript">
+		window.addEvent('domready', function(){ var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false}); });
+		var stylesList = new Hash({});
+		var styleSelected = null;
+		window.addEvent('domready', function() {
+			styleSelected = $('quasar_preset_style').getValue();
+			$('quasar_preset_style').empty();
+			stylesList.set('style1', ['style1', 'high','high', 'helvetica', '#3D9FD0']);
+			stylesList.set('style2', ['style2', 'high','high', 'helvetica', '#3D9FD0']);
+			stylesList.set('style3', ['style3', 'high','high', 'helvetica', '#71A311']);
+			stylesList.set('style4', ['style4', 'high','high', 'helvetica', '#71A311']);
+			stylesList.set('style5', ['style5', 'high','high', 'helvetica', '#cc0000']);
+			stylesList.set('style6', ['style6', 'high','high', 'helvetica', '#cc0000']);
+		});var rainbowLoad = function(name, hex) {
+				if (hex) {
+					var n = name.replace('params', '');
+					$(n+'_input').getPrevious().value = hex;
+					$(n+'_input').getFirst().setStyle('background-color', hex);
+				}
+			};
+					
+			/* START_DEBUG ONLY */
+			var debug_only = function() {};
+			
+			/* END_DEBUG ONLY */
+			
+			window.addEvent('domready', function() {
+				
+				debug_only();
+				
+				// Styles Combo
+				var stylesCombo = $('quasar_preset_style');
+				var bg = $('quasar_bg_level');
+				var body = $('quasar_body_level');
+				var css = $('quasar_css_style');
+				var font = $('quasar_fontface');
+				
+				stylesList.each(function(key, value) {
+					var option = new Element('option', {'value': value.toLowerCase()}).setHTML(value.capitalize());
+					if (value == styleSelected) option.setProperty('selected', 'selected');
+					option.inject(stylesCombo);
+				});
+				var option = new Element('option', {'value': 'custom'}).setHTML('Custom').inject(stylesCombo);
+				if (styleSelected == 'custom') option.setProperty('selected', 'selected');
+				
+				stylesCombo.addEvent('change', function(e) {
+					new Event(e).stop();
+					if (this.value == 'custom') return;
+					css.getChildren().each(function(el) {
+						if (el.value == stylesList.get(this.value)[0]) el.selected = true;
+					}, this);
+					bg.getChildren().each(function(el) {
+						if (el.value == stylesList.get(this.value)[1]) el.selected = true;
+					}, this);
+					body.getChildren().each(function(el) {
+						if (el.value == stylesList.get(this.value)[2]) el.selected = true;
+					}, this);
+					font.getChildren().each(function(el) {
+						if (el.value == stylesList.get(this.value)[3]) el.selected = true;
+					}, this);
+					
+					rainbowLoad('myRainbow_quasar_link_color', stylesList.get(this.value)[4]);					
+				});				
+			});
+		
+window.addEvent('domready', function() {
+			var input = $('quasar_link_color');
+			var r_quasar_link_color = new MooRainbow('myRainbow_quasar_link_color_input', {
+				id: 'myRainbow_quasar_link_color',
+				startColor: $('quasar_link_color').getValue().hexToRgb(true),
+				imgPath: '../styles/quasar/template/moorainbow/images/',
+				onChange: function(color) {
+					$('quasar_preset_style').selectedIndex = $('quasar_preset_style').getChildren().length - 1;
+					input.getNext().getFirst().setStyle('background-color', color.hex);
+					input.value = color.hex;
+					
+					if (this.visible) this.okButton.focus();
+				}
+			});	
+			$$('#quasar_css_style', '#quasar_bg_level','#quasar_body_level', '#quasar_fontface').addEvent('change', function() {
+				$('quasar_preset_style').selectedIndex = $('quasar_preset_style').getChildren().length - 1;
+			});
+			
+			r_quasar_link_color.okButton.setStyle('outline', 'none');
+			$('myRainbow_quasar_link_color_input').addEvent('click', function() {
+				r_quasar_link_color.okButton.focus();
+			});
+			input.addEvent('keyup', function(e) {
+				e = new Event(e);
+				if ((this.value.length == 4 || this.value.length == 7) && this.value[0] == '#') {
+					var rgb = new Color(this.value);
+					var hex = this.value;
+					var hsb = rgb.rgbToHsb();
+					var color = {
+						'hex': hex,
+						'rgb': rgb,
+						'hsb': hsb
+					}
+					r_quasar_link_color.fireEvent('onChange', color);
+					r_quasar_link_color.manualSet(color.rgb);
+				};
+			});
+			$('quasar_preset_style').addEvent('change', function() {
+				r_quasar_link_color.backupColor = $('quasar_link_color').getValue().hexToRgb(true);
+				r_quasar_link_color.currentColor = $('quasar_link_color').getValue().hexToRgb(true);
+				r_quasar_link_color.layout.backup.setStyle('background-color', $('quasar_link_color').getValue());	
+			});
+			input.getNext().getFirst().setStyle('background-color', r_quasar_link_color.sets.hex);
+			rainbowLoad('myRainbow_quasar_link_color');
+		});
+  </script>
+ 
+ 			
+   <table class="toolbar" style="display: none;"><tr>
+<td class="button" id="toolbar-preview">
+</td>
+</tr></table>
+   <form id="acp_joomla" method="post" action="{U_ACTION}">
+<!-- BEGIN options -->
+
+	<!-- IF options.S_LEGEND -->
+		<!-- IF not options.S_FIRST_ROW -->
+			</fieldset>
+		<!-- ENDIF -->
+		<fieldset>
+			<legend>{options.LEGEND}</legend>
+	<!-- ELSE -->
+
+		<dl>
+			<dt><label for="{options.KEY}">{options.TITLE}:</label><!-- IF options.S_EXPLAIN --><br /><span>{options.TITLE_EXPLAIN}</span><!-- ENDIF --></dt>
+			<dd>{options.CONTENT}
+			<!-- IF MODE == quasar -->
+			<!-- IF options.KEY == quasar_link_color --><div class="picker" id="myRainbow_{options.KEY}_input"><div class="overlay"></div></div><!-- ENDIF -->
+			<!-- ENDIF -->
+
+		</dd></dl>
+		
+	<!-- ENDIF -->
+<!-- END options -->
